@@ -10,6 +10,8 @@ import { GetBackendService } from 'src/app/services/get-backend.service';
 })
 export class MyBarChartComponent implements OnInit {
 
+  dataTable: any[] = [];
+
   public barChartOptions: ChartOptions = {
     responsive: true,
   };
@@ -61,11 +63,15 @@ export class MyBarChartComponent implements OnInit {
           backgroundColor: this.bar3ChartBackground,
           barPercentage: 0.6
         },
-
-
-
-
       ];
+      this.dataTable = [datos.lunes15,datos.lunes30,datos.lunes60,
+        datos.martes15,datos.martes30,datos.martes60,
+        datos.miercoles15,datos.miercoles30,datos.miercoles60,
+        datos.jueves15,datos.jueves30,datos.jueves60,
+        datos.viernes15,datos.viernes30,datos.viernes60,
+        datos.sabado15,datos.sabado30,datos.sabado60,
+        datos.domingo15,datos.domingo30,datos.domingo60,
+      ]
     })
     this.getBackendService.getIngresos().subscribe(datos =>{
       console.log('Registros: ', datos)
