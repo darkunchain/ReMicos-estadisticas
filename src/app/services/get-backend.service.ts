@@ -20,4 +20,9 @@ export class GetBackendService {
     return this.http.get<Cliente[]>('http://app.remicos.com.co:8081/api/ingresos')
 
   }
+
+  getGraf1():Observable<Cliente[]> {
+    return this.http.get<Cliente[]>('http://app.remicos.com.co:8081/api/graf1')
+
+  }
 }

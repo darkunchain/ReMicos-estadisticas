@@ -26,8 +26,8 @@ export class MyBarChartComponent implements OnInit {
   constructor(private getBackendService:GetBackendService) { }
 
   ngOnInit() {
-    this.getBackendService.getRegistros().subscribe(datos =>{
-      console.log('Registros: ', datos)
+    this.getBackendService.getGraf1().subscribe(datos =>{
+      console.log('graf1: ', datos)
     })
     this.getBackendService.getIngresos().subscribe(datos =>{
       console.log('Registros: ', datos)
