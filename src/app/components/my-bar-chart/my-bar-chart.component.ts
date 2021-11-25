@@ -47,19 +47,19 @@ export class MyBarChartComponent implements OnInit {
           datos.jueves15, datos.viernes15, datos.sabado15, datos.domingo15],
           label: '15 min.',
           backgroundColor: this.bar1ChartBackground,
-          barPercentage: 0.3
+          barPercentage: 0.6
         },
         { data: [datos.lunes30, datos.martes30, datos.miercoles30,
           datos.jueves30, datos.viernes30, datos.sabado30, datos.domingo30],
           label: '30 min.',
           backgroundColor: this.bar2ChartBackground,
-          barPercentage: 0.3
+          barPercentage: 0.6
          },
         { data: [datos.lunes60, datos.martes60, datos.miercoles60,
           datos.jueves60, datos.viernes60, datos.sabado60, datos.domingo60],
           label: '1 hora',
           backgroundColor: this.bar3ChartBackground,
-          barPercentage: 0.3
+          barPercentage: 0.6
         },
 
 
