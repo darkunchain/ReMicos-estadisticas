@@ -11,7 +11,7 @@
     margin-left: auto;
   }
   .table > :not(caption) > * > * {
-    font-size: 14px;
+    font-size: 14px!important;
   }
 
 }
@@ -29,7 +29,7 @@
     margin-left: auto;
   }
   .table > :not(caption) > * > * {
-    font-size: 14px;
+    font-size: 12px!important;
   }
 }
 
@@ -46,10 +46,10 @@
     margin-left: auto;
   }
   .table > :not(caption) > * > * {
-    font-size: 8px;
+    font-size: 8px!important;
   }
   .table {
-    font-size: 8px;
+    font-size: 8px!important;
   }
 }
 
