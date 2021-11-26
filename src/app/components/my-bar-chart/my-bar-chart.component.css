@@ -46,7 +46,10 @@
     margin-left: auto;
   }
   .table > :not(caption) > * > * {
-    font-size: 12px;
+    font-size: 8px;
+  }
+  .table {
+    font-size: 8px;
   }
 }
 
