@@ -11,6 +11,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ChartsModule } from 'ng2-charts';
 import { MyBarChartComponent } from './components/my-bar-chart/my-bar-chart.component';
 import { HttpClientModule } from '@angular/common/http';
+import { ChartMesComponent } from './components/chart-mes/chart-mes.component';
+import { MaterialModule } from './material.module';
 
 
 
@@ -19,14 +21,16 @@ import { HttpClientModule } from '@angular/common/http';
     AppComponent,
     HeaderComponent,
     FooterComponent,
-    MyBarChartComponent
+    MyBarChartComponent,
+    ChartMesComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
     ChartsModule,
-    HttpClientModule
+    HttpClientModule,
+    MaterialModule
   ],
   providers: [],
   bootstrap: [AppComponent]
