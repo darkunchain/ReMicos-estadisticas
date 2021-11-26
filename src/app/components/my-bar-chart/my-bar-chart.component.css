@@ -10,6 +10,10 @@
     margin-right: auto;
     margin-left: auto;
   }
+  .table > :not(caption) > * > * {
+    font-size: 14px;
+  }
+
 }
 
 @media screen and (max-width: 1080px) {
@@ -24,6 +28,9 @@
     margin-right: auto;
     margin-left: auto;
   }
+  .table > :not(caption) > * > * {
+    font-size: 14px;
+  }
 }
 
 @media screen and (max-width: 990px) {
@@ -37,6 +44,9 @@
     padding-left: var(--bs-gutter-x, 0.75rem);
     margin-right: auto;
     margin-left: auto;
+  }
+  .table > :not(caption) > * > * {
+    font-size: 12px;
   }
 }
 
@@ -53,6 +63,9 @@
     margin-right: auto;
     margin-left: auto;
   }
+  .table > :not(caption) > * > * {
+    font-size: 11px;
+  }
 }
 
 @media screen and (max-width: 575.98px) {
@@ -66,6 +79,9 @@
     padding-left: var(--bs-gutter-x, 0.75rem);
     margin-right: auto;
     margin-left: auto;
+  }
+  .table > :not(caption) > * > * {
+    font-size: 10px;
   }
 }
 
