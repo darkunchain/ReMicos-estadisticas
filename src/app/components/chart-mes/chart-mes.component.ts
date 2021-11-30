@@ -7,6 +7,7 @@ import { DateAdapter, MAT_DATE_FORMATS, MAT_DATE_LOCALE, MatDateFormats } from '
 import { MatDatepicker } from '@angular/material/datepicker';
 import * as _moment from 'moment';
 import { Moment } from 'moment';
+import { GetBackendService } from 'src/app/services/get-backend.service';
 //import { default as _rollupMoment, Moment } from 'moment';
 //const moment = _rollupMoment || _moment;
 const moment = _moment;
@@ -53,12 +54,15 @@ export class ChartMesComponent implements OnInit {
     { data: [28, 48, 40, 19, 86, 27, 90], label: 'Series B' }
   ];
 
-  constructor() { }
+  constructor(private getBackendService:GetBackendService) { }
 
   chosenYearHandler(normalizedYear: Moment) {
     const ctrlValue = this.date.value;
     ctrlValue.year(normalizedYear.year());
     this.date.setValue(ctrlValue);
+    this.getBackendService.getIngresos().subscribe(datos =>{
+      console.log('YearHandler: ', datos)
+    })
     console.log('this.date:',this.date.value)
   }
 
@@ -67,6 +71,9 @@ export class ChartMesComponent implements OnInit {
     ctrlValue.month(normalizedMonth.month());
     this.date.setValue(ctrlValue);
     console.log('this.date:',this.date.value)
+    this.getBackendService.getIngresos().subscribe(datos =>{
+      console.log('MonthHandler: ', datos)
+    })
     datepicker.close();
 
   }
