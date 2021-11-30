@@ -25,4 +25,9 @@ export class GetBackendService {
     return this.http.get<Cliente[]>('http://app.remicos.com.co:8081/api/graf1')
 
   }
+
+  getGraf2():Observable<any> {
+    return this.http.get<Cliente[]>('http://190.248.51.114:3000/api/graf2')
+
+  }
 }
