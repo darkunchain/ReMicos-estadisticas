@@ -60,9 +60,10 @@ export class ChartMesComponent implements OnInit {
     const ctrlValue = this.date.value;
     ctrlValue.year(normalizedYear.year());
     this.date.setValue(ctrlValue);
-    this.getBackendService.datosPost(this.date)
+
     this.getBackendService.getGraf2().subscribe(datos =>{
       console.log('YearHandler: ', datos)
+      this.getBackendService.datosPost(this.date)
     })
     console.log('this.date:',this.date.value)
   }
@@ -72,9 +73,10 @@ export class ChartMesComponent implements OnInit {
     ctrlValue.month(normalizedMonth.month());
     this.date.setValue(ctrlValue);
     console.log('this.date:',this.date.value)
-    this.getBackendService.datosPost(this.date)
+
     this.getBackendService.getGraf2().subscribe(datos =>{
       console.log('MonthHandler: ', datos)
+      this.getBackendService.datosPost(this.date)
     })
     datepicker.close();
 
