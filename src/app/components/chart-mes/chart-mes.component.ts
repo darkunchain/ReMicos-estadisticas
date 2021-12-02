@@ -65,14 +65,14 @@ export class ChartMesComponent implements OnInit {
       console.log('YearHandler: ', datos)
 
     }) */
-    console.log('this.date:',this.date.value)
+    //console.log('this.date:',this.date.value)
   }
 
   chosenMonthHandler(normalizedMonth: Moment, datepicker: MatDatepicker<Moment>) {
     const ctrlValue = this.date.value;
     ctrlValue.month(normalizedMonth.month());
     this.date.setValue(ctrlValue);
-    console.log('this.date:',this.date.value)
+    //console.log('this.date:',this.date.value)
     this.getBackendService.datosPost(this.date)
     // this.getBackendService.postGraf2().subscribe(datos =>{
     //   console.log('MonthHandler: ', datos)

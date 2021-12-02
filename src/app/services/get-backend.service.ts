@@ -10,12 +10,13 @@ export class GetBackendService {
 
   datoPost: any;
   private datosPost$ = new Subject<any>();
+  errorMessage: any;
 
   constructor(private http: HttpClient) { }
 
   datosPost(datos: any) {
     this.datoPost = datos;
-    console.log('datosPost: ', this.datoPost)
+    //console.log('datosPost: ', this.datoPost)
     this.postGraf2()
     this.datosPost$.next(datos)
   }
@@ -36,6 +37,7 @@ export class GetBackendService {
   }
 
   postGraf2(): Observable<any> {
+    console.log('this.datoPost - post:',this.datoPost)
     return this.http.post<any>('http://app.remicos.com.co:8081/api/graf2', this.datoPost)
   }
 }
