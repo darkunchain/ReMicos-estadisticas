@@ -16,6 +16,7 @@ export class GetBackendService {
   datosPost(datos: any) {
     this.datoPost = datos;
     console.log('datosPost: ', this.datoPost)
+    this.postGraf2()
     this.datosPost$.next(datos)
   }
 
