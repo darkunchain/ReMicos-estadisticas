@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Cliente } from '../interfaces/cliente';
 import { Observable, Subject } from 'rxjs';
 
@@ -37,7 +37,12 @@ export class GetBackendService {
   }
 
   postGraf2(): Observable<any> {
+    let httpHeaders = new HttpHeaders()
+     .set('Content-Type', 'application/json')
+     .set('Cache-Control', 'no-cache');
+     let options = {headers: httpHeaders};
     console.log('this.datoPost - post:',this.datoPost.value)
-    return this.http.post<any>('http://app.remicos.com.co:8081/api/graf2', {"titulo":"el titulo","numero":63})
+    return this.http.post<any>('http://app.remicos.com.co:8081/api/graf2',
+    {"titulo":"el titulo","numero":63}, options)
   }
 }
