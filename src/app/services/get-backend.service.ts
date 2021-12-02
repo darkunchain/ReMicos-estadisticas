@@ -38,6 +38,6 @@ export class GetBackendService {
 
   postGraf2(): Observable<any> {
     console.log('this.datoPost - post:',this.datoPost)
-    return this.http.post<any>('http://app.remicos.com.co:8081/api/graf2', {body:this.datoPost})
+    return this.http.post<any>('http://app.remicos.com.co:8081/api/graf2', {"titulo":"el titulo","numero":63})
   }
 }
