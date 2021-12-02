@@ -17,7 +17,8 @@ export class GetBackendService {
   datosPost(datos: any) {
     this.datoPost = datos;
     //console.log('datosPost: ', this.datoPost)
-    this.postGraf2()
+    let retorno = this.postGraf2()
+    console.log('retorno: ', retorno)
     this.datosPost$.next(datos)
   }
 
