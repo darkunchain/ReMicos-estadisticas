@@ -46,7 +46,7 @@ export class GetBackendService {
     console.log('this.datoPost_d - post:', this.datoPost.value._d)
 
     this.http.post<any>('http://app.remicos.com.co:8081/api/graf2',
-    this.datoPost.value._d, options).subscribe(data => {
+    {fecha: this.datoPost.value._d}, options).subscribe(data => {
         console.log('retorno de datos:', data);
 
       });
