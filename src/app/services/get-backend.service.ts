@@ -16,7 +16,7 @@ export class GetBackendService {
 
   datosPost(datos: any) {
     this.datoPost = datos;
-    //console.log('datosPost: ', this.datoPost)
+    console.log('datosPost: ', this.datoPost)
     let retorno = this.postGraf2()
     console.log('retorno: ', retorno)
     this.datosPost$.next(datos)
@@ -37,13 +37,17 @@ export class GetBackendService {
     return this.http.get<Cliente[]>('http://app.remicos.com.co:8081/api/graf1')
   }
 
-  postGraf2(): Observable<any> {
+  postGraf2(): void {
     let httpHeaders = new HttpHeaders()
-     .set('Content-Type', 'application/json')
-     .set('Cache-Control', 'no-cache');
-     let options = {headers: httpHeaders};
-    console.log('this.datoPost - post:',this.datoPost.value)
-    return this.http.post<any>('http://app.remicos.com.co:8081/api/graf2',
-    {"titulo":"el titulo","numero":63}, options)
+      .set('Content-Type', 'application/json')
+      .set('Cache-Control', 'no-cache');
+    let options = { headers: httpHeaders };
+    console.log('this.datoPost - post:', this.datoPost.value)
+
+    this.http.post<any>('http://app.remicos.com.co:8081/api/graf2',
+      { "titulo": "el titulo", "numero": 63 }, options).subscribe(data => {
+        console.log('retorno de datos:', data);
+
+      });
   }
 }
