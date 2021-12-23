@@ -42,10 +42,10 @@ export class GetBackendService {
       .set('Content-Type', 'application/json')
       .set('Cache-Control', 'no-cache');
     let options = { headers: httpHeaders };
-    console.log('this.datoPost - post:', this.datoPost.value)
+    console.log('this.datoPost_d - post:', this.datoPost.value._d)
 
     this.http.post<any>('http://app.remicos.com.co:8081/api/graf2',
-      { "titulo": "el titulo", "numero": 63 }, options).subscribe(data => {
+    this.datoPost.value._d, options).subscribe(data => {
         console.log('retorno de datos:', data);
 
       });
