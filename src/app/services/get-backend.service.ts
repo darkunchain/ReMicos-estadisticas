@@ -40,7 +40,8 @@ export class GetBackendService {
   postGraf2(): void {
     let httpHeaders = new HttpHeaders()
       .set('Content-Type', 'application/json')
-      .set('Cache-Control', 'no-cache');
+      .set('Cache-Control', 'no-cache')
+      .set('authorization', 'cabecera de autorizacion');
     let options = { headers: httpHeaders };
     console.log('this.datoPost_d - post:', this.datoPost.value._d)
 
