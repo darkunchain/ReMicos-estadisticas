@@ -41,8 +41,9 @@ export class GetBackendService {
       .set('Content-Type', 'application/json')
       .set('Cache-Control', 'no-cache');
     let options = { headers: httpHeaders };
+    console.log('this.datoPost:',this.datoPost)
     this.http.post<any>('http://app.remicos.com.co:8081/api/graf2',
-    {fecha: this.datoPost.toISOString()}, options).subscribe(data => {
+    {anio: this.datoPost[0], mes: this.datoPost[1]}, options).subscribe(data => {
         console.log('retorno de datos:', data);
 
       });

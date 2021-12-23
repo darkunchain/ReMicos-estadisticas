@@ -68,7 +68,9 @@ export class ChartMesComponent implements OnInit {
     const ctrlValue = this.date.value;
     ctrlValue.month(normalizedMonth.month());
     this.date.setValue(ctrlValue);
-    this.getBackendService.datosPost(this.date)
+    this.dato = this.date.value.toISOString().split('-')
+    console.log('dato:',this.dato)
+    this.getBackendService.datosPost(this.dato)
     datepicker.close();
   }
 
