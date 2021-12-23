@@ -13,6 +13,7 @@ import { MyBarChartComponent } from './components/my-bar-chart/my-bar-chart.comp
 import { HttpClientModule } from '@angular/common/http';
 import { ChartMesComponent } from './components/chart-mes/chart-mes.component';
 import { MaterialModule } from './material.module';
+import { ChartAnioComponent } from './components/chart-anio/chart-anio.component';
 
 
 
@@ -22,7 +23,8 @@ import { MaterialModule } from './material.module';
     HeaderComponent,
     FooterComponent,
     MyBarChartComponent,
-    ChartMesComponent
+    ChartMesComponent,
+    ChartAnioComponent
   ],
   imports: [
     BrowserModule,

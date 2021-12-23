@@ -24,9 +24,9 @@ export const MY_FORMATS = {
 };
 
 @Component({
-  selector: 'app-chart-mes',
-  templateUrl: './chart-mes.component.html',
-  styleUrls: ['./chart-mes.component.css'],
+  selector: 'app-chart-anio',
+  templateUrl: './chart-anio.component.html',
+  styleUrls: ['./chart-anio.component.css'],
   providers: [
     {
       provide: DateAdapter,
@@ -37,7 +37,7 @@ export const MY_FORMATS = {
     {provide: MAT_DATE_FORMATS, useValue: MY_FORMATS},
   ],
 })
-export class ChartMesComponent implements OnInit {
+export class ChartAnioComponent implements OnInit {
 
   date = new FormControl(moment());
   dato:any
@@ -68,11 +68,13 @@ export class ChartMesComponent implements OnInit {
     const ctrlValue = this.date.value;
     ctrlValue.month(normalizedMonth.month());
     this.date.setValue(ctrlValue);
-    this.getBackendService.datosPost(this.date)
+    this.dato = this.date.value.toISOString().split('-')
+    console.log('dato:',this.dato)
+    this.getBackendService.datosPost(this.dato)
     datepicker.close();
   }
 
-  ngOnInit() {
+  ngOnInit(): void {
   }
 
 }
