@@ -60,8 +60,9 @@ export class ChartMesComponent implements OnInit {
     const ctrlValue = this.date.value;
     ctrlValue.year(normalizedYear.year());
     this.date.setValue(ctrlValue);
-    this.getBackendService.datosPost(this.date)
-    /* this.getBackendService.postGraf2().subscribe(datos =>{
+    console.log('ctrlValue:',ctrlValue,'ctrlValue.year:',ctrlValue.year,'date:', this.date)
+    /* this.getBackendService.datosPost(this.date)
+    this.getBackendService.postGraf2().subscribe(datos =>{
       console.log('YearHandler: ', datos)
 
     }) */
