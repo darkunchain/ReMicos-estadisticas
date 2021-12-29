@@ -75,10 +75,6 @@ export class ChartMesComponent implements OnInit, OnDestroy{
   constructor(private getBackendService:GetBackendService) { }
 
   chosenYearHandler(normalizedYear: Moment) {
-
-    /* this.barData = []
-    this.barChartLabels = [];
-    this.barChartData = [] */
     const ctrlValue = this.date.value;
     ctrlValue.year(normalizedYear.year());
     this.date.setValue(ctrlValue);
@@ -101,9 +97,7 @@ export class ChartMesComponent implements OnInit, OnDestroy{
       for(let i=1;i<=this.indiceMes;i++){
         this.barChartLabels[i] = i+'-'+this.dato[1]+'-'+this.dato[0]
       }
-      /* for(let i=1;i<=this.indiceMes;i++){
-        this.barData[this.retorno.ingresosDia.dia] = this.retorno.ingresosDia.ingresoDia
-      } */
+
        console.log('retorno:', this.retorno, 'ingresosDia:',this.retorno.ingresosDia)
       this.retorno.ingresosDia.forEach((element: any) => {
         this.barData[element.dia] = element.ingresoDia
