@@ -70,7 +70,7 @@ export class ChartAnioComponent implements OnInit {
     this.date.setValue(ctrlValue);
     this.dato = this.date.value.toISOString().split('-')
     console.log('dato:',this.dato)
-    this.getBackendService.datosPost(this.dato)
+    this.getBackendService.postGraf2(this.dato)
     datepicker.close();
   }
 

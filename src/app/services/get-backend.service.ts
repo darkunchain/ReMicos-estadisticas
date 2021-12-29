@@ -11,16 +11,19 @@ export class GetBackendService {
   datoPost: any;
   private datosPost$ = new Subject<any>();
   errorMessage: any;
+  ingresos : any
 
   constructor(private http: HttpClient) { }
 
-  datosPost(datos: any) {
+  /* datosPost(datos: any) {
     this.datoPost = datos;
-    let retorno = this.postGraf2()
+    let retorno = this.postGraf2().subscribe(resp => {
+      return this.ingresos = resp
+    })
     console.log('retorno: ', retorno)
     this.datosPost$.next(datos)
   }
-
+ */
 
   getRegistros(): Observable<Cliente[]> {
     return this.http.get<Cliente[]>('http://app.remicos.com.co:8081/api/registros')
@@ -36,16 +39,12 @@ export class GetBackendService {
     return this.http.get<Cliente[]>('http://app.remicos.com.co:8081/api/graf1')
   }
 
-  postGraf2(): void {
+  postGraf2(dato:any): Observable<any> {
     let httpHeaders = new HttpHeaders()
       .set('Content-Type', 'application/json')
       .set('Cache-Control', 'no-cache');
     let options = { headers: httpHeaders };
-    console.log('this.datoPost:',this.datoPost)
-    this.http.post<any>('http://app.remicos.com.co:8081/api/graf2',
-    {anio: this.datoPost[0], mes: this.datoPost[1]}, options).subscribe(data => {
-        console.log('retorno de datos:', data);
-
-      });
+    return this.http.post<any>('http://app.remicos.com.co:8081/api/graf2',
+    {anio: dato[0], mes: dato[1]}, options)
   }
 }

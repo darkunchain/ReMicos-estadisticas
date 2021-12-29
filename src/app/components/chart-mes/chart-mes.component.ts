@@ -1,6 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnDestroy, ViewChild } from '@angular/core';
 import { ChartDataSets, ChartOptions, ChartType } from 'chart.js';
-import { Label } from 'ng2-charts';
+import { BaseChartDirective, Label } from 'ng2-charts';
 import { FormControl } from '@angular/forms';
 import { MomentDateAdapter, MAT_MOMENT_DATE_ADAPTER_OPTIONS } from '@angular/material-moment-adapter';
 import { DateAdapter, MAT_DATE_FORMATS, MAT_DATE_LOCALE, MatDateFormats } from '@angular/material/core';
@@ -8,6 +8,9 @@ import { MatDatepicker } from '@angular/material/datepicker';
 import * as _moment from 'moment';
 import { Moment } from 'moment';
 import { GetBackendService } from 'src/app/services/get-backend.service';
+import { Observable, Subscription, UnsubscriptionError } from 'rxjs';
+
+
 //import { default as _rollupMoment, Moment } from 'moment';
 //const moment = _rollupMoment || _moment;
 const moment = _moment;
@@ -37,31 +40,48 @@ export const MY_FORMATS = {
     {provide: MAT_DATE_FORMATS, useValue: MY_FORMATS},
   ],
 })
-export class ChartMesComponent implements OnInit {
+export class ChartMesComponent implements OnInit, OnDestroy{
+  @ViewChild(BaseChartDirective)
+  baseChart!: BaseChartDirective;
+
+
+
 
   date = new FormControl(moment());
   dato:any
+  retorno:any
+  barData: number[] = []
+  indiceMes:number = 30
+  observ: Subscription = new Subscription;
+
+
+
+
+
 
   public barChartOptions: ChartOptions = {
     responsive: true,
+
   };
-  public barChartLabels: Label[] = ['2006', '2007', '2008', '2009', '2010', '2011', '2012'];
+  barChartLabels: Label[] = [];
   public barChartType: ChartType = 'bar';
   public barChartLegend = true;
   public barChartPlugins = [];
 
-  public barChartData: ChartDataSets[] = [
-    { data: [65, 59, 80, 81, 56, 55, 40], label: 'Series A' },
-    { data: [28, 48, 40, 19, 86, 27, 90], label: 'Series B' }
+  barChartData: ChartDataSets[] = [
+    { data: this.barData, label: 'Ingresos' },
   ];
 
   constructor(private getBackendService:GetBackendService) { }
 
   chosenYearHandler(normalizedYear: Moment) {
+
+    /* this.barData = []
+    this.barChartLabels = [];
+    this.barChartData = [] */
     const ctrlValue = this.date.value;
     ctrlValue.year(normalizedYear.year());
     this.date.setValue(ctrlValue);
-
   }
 
   chosenMonthHandler(normalizedMonth: Moment, datepicker: MatDatepicker<Moment>) {
@@ -69,12 +89,62 @@ export class ChartMesComponent implements OnInit {
     ctrlValue.month(normalizedMonth.month());
     this.date.setValue(ctrlValue);
     this.dato = this.date.value.toISOString().split('-')
-    console.log('dato:',this.dato)
-    this.getBackendService.datosPost(this.dato)
+
+
+    this.observ = this.getBackendService.postGraf2(this.dato).subscribe(resp => {
+      this.retorno = resp
+      this.indiceMes = this.getDaysInMonth(this.dato[1], this.dato[0]) //Obtiene los dias del mes
+      for(let i=1;i<=this.indiceMes;i++){
+        this.barData[i] = 0
+        this.barChartLabels[i] = ''
+      }
+      for(let i=1;i<=this.indiceMes;i++){
+        this.barChartLabels[i] = i+'-'+this.dato[1]+'-'+this.dato[0]
+      }
+      /* for(let i=1;i<=this.indiceMes;i++){
+        this.barData[this.retorno.ingresosDia.dia] = this.retorno.ingresosDia.ingresoDia
+      } */
+       console.log('retorno:', this.retorno, 'ingresosDia:',this.retorno.ingresosDia)
+      this.retorno.ingresosDia.forEach((element: any) => {
+        this.barData[element.dia] = element.ingresoDia
+      });
+
+      //this.baseChart.chart.update()
+
+      console.log('  this.barData:', this.barData, '  this.barChartLabels:', this.barChartLabels)
+
+    })
     datepicker.close();
+    this.baseChart.chart.update()
+
   }
 
+  getDaysInMonth = function(month:number,year:number) {
+   return new Date(year, month, 0).getDate();
+  };
+
+  refresh_chart() {
+    setTimeout(() => {
+        if (this.baseChart && this.baseChart.chart && this.baseChart.chart.config) {
+            this.baseChart.datasets = [];
+            this.barData = []
+            this.baseChart.chart.update();
+        }
+    });
+}
+
+
+
+
   ngOnInit() {
+
+
+  }
+
+  ngOnDestroy(){
+    this.observ.unsubscribe()
+    this.barData = []
+    this.barChartLabels = [];
   }
 
 }
