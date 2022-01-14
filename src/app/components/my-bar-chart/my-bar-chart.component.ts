@@ -53,7 +53,7 @@ export class MyBarChartComponent implements OnInit {
 
   ngOnInit() {
     this.getBackendService.getGraf1().subscribe(datos =>{
-      console.log('graf1: ', datos.lunes15)
+      console.log('graf1: ', datos)
       this.barChartData = [
         { data: [datos.lunes15, datos.martes15, datos.miercoles15,
           datos.jueves15, datos.viernes15, datos.sabado15, datos.domingo15],
@@ -73,27 +73,28 @@ export class MyBarChartComponent implements OnInit {
           backgroundColor: this.bar3ChartBackground,
           barPercentage: 0.6
         },
-        { data: [datos.lunes15c, datos.martes15c, datos.miercoles15c,
-          datos.jueves15c, datos.viernes15c, datos.sabado15c, datos.domingo15c],
+        { data: [datos.lunes15p, datos.martes15p, datos.miercoles15p,
+          datos.jueves15p, datos.viernes15p, datos.sabado15p, datos.domingo15p],
           label: '+ 15 min',
           backgroundColor: this.bar4ChartBackground,
           barPercentage: 0.6
         },
-        { data: [datos.lunes30c, datos.martes30c, datos.miercoles30c,
-          datos.jueves30c, datos.viernes30c, datos.sabado30c, datos.domingo30c],
+        { data: [datos.lunes30p, datos.martes30p, datos.miercoles30p,
+          datos.jueves30p, datos.viernes30p, datos.sabado30p, datos.domingo30p],
           label: '+ 30 min',
           backgroundColor: this.bar5ChartBackground,
           barPercentage: 0.6
         },
       ];
-      this.dataTable = [datos.lunes15,datos.lunes30,datos.lunes60,datos.lunes15c,datos.lunes30c,
-        datos.martes15,datos.martes30,datos.martes60,datos.martes15c,datos.martes30c,
-        datos.miercoles15,datos.miercoles30,datos.miercoles60,datos.miercoles15c,datos.miercoles30c,
-        datos.jueves15,datos.jueves30,datos.jueves60,datos.jueves15c,datos.jueves30c,
-        datos.viernes15,datos.viernes30,datos.viernes60,datos.viernes15c,datos.viernes30c,
-        datos.sabado15,datos.sabado30,datos.sabado60,datos.sabado15c,datos.sabado30c,
-        datos.domingo15,datos.domingo30,datos.domingo60,datos.domingo15c,datos.domingo30c,
+      this.dataTable = [datos.lunes15,datos.lunes30,datos.lunes60,datos.lunes15p,datos.lunes30p,
+        datos.martes15,datos.martes30,datos.martes60,datos.martes15p,datos.martes30p,
+        datos.miercoles15,datos.miercoles30,datos.miercoles60,datos.miercoles15p,datos.miercoles30p,
+        datos.jueves15,datos.jueves30,datos.jueves60,datos.jueves15p,datos.jueves30p,
+        datos.viernes15,datos.viernes30,datos.viernes60,datos.viernes15p,datos.viernes30p,
+        datos.sabado15,datos.sabado30,datos.sabado60,datos.sabado15p,datos.sabado30p,
+        datos.domingo15,datos.domingo30,datos.domingo60,datos.domingo15p,datos.domingo30p,
       ]
+      console.log('datatable: ', this.dataTable)
     })
     this.getBackendService.getIngresos().subscribe(datos =>{
       console.log('Registros: ', datos)
