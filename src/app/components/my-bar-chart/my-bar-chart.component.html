@@ -44,67 +44,95 @@
             <td>{{ this.dataTable[1] * 7000 | currency: "COP":" $ " }}</td>
             <td>{{ this.dataTable[2]}}</td>
             <td>{{ this.dataTable[2] * 12000 | currency: "COP":" $ " }}</td>
-            <td>{{ (this.dataTable[0] * 4000) +  (this.dataTable[1] * 7000) +  (this.dataTable[2] * 12000) | currency: "COP":" $ " }}</td>
+            <td>{{ this.dataTable[3]}}</td>
+            <td>{{ this.dataTable[3] * 3000 | currency: "COP":" $ " }}</td>
+            <td>{{ this.dataTable[4]}}</td>
+            <td>{{ this.dataTable[4] * 5000 | currency: "COP":" $ " }}</td>
+            <td>{{ (this.dataTable[0] * 4000) +  (this.dataTable[1] * 7000) +  (this.dataTable[2] * 12000) +  (this.dataTable[3] * 3000) +  (this.dataTable[4] * 5000) | currency: "COP":" $ " }}</td>
           </tr>
           <tr>
             <th scope="row">Martes</th>
-            <td>{{ this.dataTable[3]}}</td>
-            <td>{{ this.dataTable[3] * 4000 | currency: "COP":" $ " }}</td>
-            <td>{{ this.dataTable[4]}}</td>
-            <td>{{ this.dataTable[4] * 7000 | currency: "COP":" $ " }}</td>
             <td>{{ this.dataTable[5]}}</td>
-            <td>{{ this.dataTable[5] * 12000 | currency: "COP":" $ " }}</td>
-            <td>{{ (this.dataTable[3] * 4000) +  (this.dataTable[4] * 7000) +  (this.dataTable[5] * 12000) | currency: "COP":" $ " }}</td>
+            <td>{{ this.dataTable[5] * 4000 | currency: "COP":" $ " }}</td>
+            <td>{{ this.dataTable[6]}}</td>
+            <td>{{ this.dataTable[6] * 7000 | currency: "COP":" $ " }}</td>
+            <td>{{ this.dataTable[7]}}</td>
+            <td>{{ this.dataTable[7] * 12000 | currency: "COP":" $ " }}</td>
+            <td>{{ this.dataTable[8]}}</td>
+            <td>{{ this.dataTable[8] * 12000 | currency: "COP":" $ " }}</td>
+            <td>{{ this.dataTable[9]}}</td>
+            <td>{{ this.dataTable[9] * 12000 | currency: "COP":" $ " }}</td>
+            <td>{{ (this.dataTable[5] * 4000) +  (this.dataTable[6] * 7000) +  (this.dataTable[7] * 12000) +  (this.dataTable[8] * 3000) +  (this.dataTable[9] * 5000) | currency: "COP":" $ " }}</td>
           </tr>
           <tr>
             <th scope="row">Miercoles</th>
-            <td>{{ this.dataTable[6]}}</td>
-            <td>{{ this.dataTable[6] * 4000 | currency: "COP":" $ " }}</td>
-            <td>{{ this.dataTable[7]}}</td>
-            <td>{{ this.dataTable[7] * 7000 | currency: "COP":" $ " }}</td>
-            <td>{{ this.dataTable[8]}}</td>
-            <td>{{ this.dataTable[8] * 12000 | currency: "COP":" $ " }}</td>
-            <td>{{ (this.dataTable[6] * 4000) +  (this.dataTable[7] * 7000) +  (this.dataTable[8] * 12000) | currency: "COP":" $ " }}</td>
+            <td>{{ this.dataTable[10]}}</td>
+            <td>{{ this.dataTable[10] * 4000 | currency: "COP":" $ " }}</td>
+            <td>{{ this.dataTable[11]}}</td>
+            <td>{{ this.dataTable[11] * 7000 | currency: "COP":" $ " }}</td>
+            <td>{{ this.dataTable[12]}}</td>
+            <td>{{ this.dataTable[12] * 12000 | currency: "COP":" $ " }}</td>
+            <td>{{ this.dataTable[13]}}</td>
+            <td>{{ this.dataTable[13] * 3000 | currency: "COP":" $ " }}</td>
+            <td>{{ this.dataTable[14]}}</td>
+            <td>{{ this.dataTable[14] * 5000 | currency: "COP":" $ " }}</td>
+            <td>{{ (this.dataTable[10] * 4000) +  (this.dataTable[11] * 7000) +  (this.dataTable[12] * 12000) +  (this.dataTable[13] * 3000) +  (this.dataTable[14] * 5000) | currency: "COP":" $ " }}</td>
           </tr>
           <tr>
             <th scope="row">Jueves</th>
-            <td>{{ this.dataTable[9]}}</td>
-            <td>{{ this.dataTable[9] * 4000 | currency: "COP":" $ " }}</td>
-            <td>{{ this.dataTable[10]}}</td>
-            <td>{{ this.dataTable[10] * 7000 | currency: "COP":" $ " }}</td>
-            <td>{{ this.dataTable[11]}}</td>
-            <td>{{ this.dataTable[11] * 12000 | currency: "COP":" $ " }}</td>
-            <td>{{ (this.dataTable[9] * 4000) +  (this.dataTable[10] * 7000) +  (this.dataTable[11] * 12000) | currency: "COP":" $ " }}</td>
-          </tr>
-          <tr>
-            <th scope="row">Viernes</th>
-            <td>{{ this.dataTable[12]}}</td>
-            <td>{{ this.dataTable[12] * 4000}}</td>
-            <td>{{ this.dataTable[13]}}</td>
-            <td>{{ this.dataTable[13] * 7000}}</td>
-            <td>{{ this.dataTable[14]}}</td>
-            <td>{{ this.dataTable[14] * 12000}}</td>
-            <td>{{ (this.dataTable[12] * 4000) +  (this.dataTable[13] * 7000) +  (this.dataTable[14] * 12000) | currency: "COP":" $ " }}</td>
-          </tr>
-          <tr>
-            <th scope="row">Sabado</th>
             <td>{{ this.dataTable[15]}}</td>
             <td>{{ this.dataTable[15] * 4000 | currency: "COP":" $ " }}</td>
             <td>{{ this.dataTable[16]}}</td>
             <td>{{ this.dataTable[16] * 7000 | currency: "COP":" $ " }}</td>
             <td>{{ this.dataTable[17]}}</td>
             <td>{{ this.dataTable[17] * 12000 | currency: "COP":" $ " }}</td>
-            <td>{{ (this.dataTable[15] * 4000) +  (this.dataTable[16] * 7000) +  (this.dataTable[17] * 12000) | currency: "COP":" $ " }}</td>
+            <td>{{ this.dataTable[18]}}</td>
+            <td>{{ this.dataTable[18] * 3000 | currency: "COP":" $ " }}</td>
+            <td>{{ this.dataTable[19]}}</td>
+            <td>{{ this.dataTable[19] * 5000 | currency: "COP":" $ " }}</td>
+            <td>{{ (this.dataTable[15] * 4000) +  (this.dataTable[16] * 7000) +  (this.dataTable[17] * 12000) +  (this.dataTable[18] * 3000) +  (this.dataTable[19] * 5000) | currency: "COP":" $ " }}</td>
+          </tr>
+          <tr>
+            <th scope="row">Viernes</th>
+            <td>{{ this.dataTable[20]}}</td>
+            <td>{{ this.dataTable[20] * 4000}}</td>
+            <td>{{ this.dataTable[21]}}</td>
+            <td>{{ this.dataTable[21] * 7000}}</td>
+            <td>{{ this.dataTable[22]}}</td>
+            <td>{{ this.dataTable[22] * 12000}}</td>
+            <td>{{ this.dataTable[23]}}</td>
+            <td>{{ this.dataTable[23] * 3000}}</td>
+            <td>{{ this.dataTable[24]}}</td>
+            <td>{{ this.dataTable[24] * 5000}}</td>
+            <td>{{ (this.dataTable[20] * 4000) +  (this.dataTable[21] * 7000) +  (this.dataTable[22] * 12000) +  (this.dataTable[23] * 3000) +  (this.dataTable[24] * 5000) | currency: "COP":" $ " }}</td>
+          </tr>
+          <tr>
+            <th scope="row">Sabado</th>
+            <td>{{ this.dataTable[25]}}</td>
+            <td>{{ this.dataTable[25] * 4000 | currency: "COP":" $ " }}</td>
+            <td>{{ this.dataTable[26]}}</td>
+            <td>{{ this.dataTable[26] * 7000 | currency: "COP":" $ " }}</td>
+            <td>{{ this.dataTable[27]}}</td>
+            <td>{{ this.dataTable[27] * 12000 | currency: "COP":" $ " }}</td>
+            <td>{{ this.dataTable[28]}}</td>
+            <td>{{ this.dataTable[28] * 3000 | currency: "COP":" $ " }}</td>
+            <td>{{ this.dataTable[29]}}</td>
+            <td>{{ this.dataTable[29] * 5000 | currency: "COP":" $ " }}</td>
+            <td>{{ (this.dataTable[25] * 4000) +  (this.dataTable[26] * 7000) +  (this.dataTable[27] * 12000) +  (this.dataTable[28] * 3000) +  (this.dataTable[29] * 5000) | currency: "COP":" $ " }}</td>
           </tr>
           <tr>
             <th scope="row">Domingo</th>
-            <td>{{ this.dataTable[18]}}</td>
-            <td>{{ this.dataTable[18] * 4000 | currency: "COP":" $ " }}</td>
-            <td>{{ this.dataTable[19]}}</td>
-            <td>{{ this.dataTable[19] * 7000 | currency: "COP":" $ " }}</td>
-            <td>{{ this.dataTable[20]}}</td>
-            <td>{{ this.dataTable[20] * 12000 | currency: "COP":" $ " }}</td>
-            <td>{{ (this.dataTable[18] * 4000) +  (this.dataTable[19] * 7000) +  (this.dataTable[20] * 12000) | currency: "COP":" $ " }}</td>
+            <td>{{ this.dataTable[30]}}</td>
+            <td>{{ this.dataTable[30] * 4000 | currency: "COP":" $ " }}</td>
+            <td>{{ this.dataTable[31]}}</td>
+            <td>{{ this.dataTable[31] * 7000 | currency: "COP":" $ " }}</td>
+            <td>{{ this.dataTable[32]}}</td>
+            <td>{{ this.dataTable[32] * 12000 | currency: "COP":" $ " }}</td>
+            <td>{{ this.dataTable[33]}}</td>
+            <td>{{ this.dataTable[33] * 3000 | currency: "COP":" $ " }}</td>
+            <td>{{ this.dataTable[34]}}</td>
+            <td>{{ this.dataTable[34] * 5000 | currency: "COP":" $ " }}</td>
+            <td>{{ (this.dataTable[30] * 4000) +  (this.dataTable[31] * 7000) +  (this.dataTable[32] * 12000) +  (this.dataTable[33] * 3000) +  (this.dataTable[34] * 5000) | currency: "COP":" $ " }}</td>
           </tr>
         </tbody>
       </table>
