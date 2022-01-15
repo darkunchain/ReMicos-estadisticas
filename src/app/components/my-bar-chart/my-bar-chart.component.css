@@ -1,7 +1,11 @@
 @media screen and (max-width: 1920px) {
-  .col-resp {
+  .col-resp-g {
     flex: 0 0 auto;
-    width: 50%;
+    width: 42%;
+  }
+  .col-resp-t {
+    flex: 0 0 auto;
+    width: 58%;
   }
   .container {
     max-width: 1800px;
@@ -17,9 +21,13 @@
 }
 
 @media screen and (max-width: 1080px) {
-  .col-resp {
+  .col-resp-g {
     flex: 0 0 auto;
-    width: 50%;
+    width: 42%;
+  }
+  .col-resp-t {
+    flex: 0 0 auto;
+    width: 58%;
   }
   .container {
     max-width: 1000px;
@@ -34,9 +42,13 @@
 }
 
 @media screen and (max-width: 990px) {
-  .col-resp {
+  .col-resp-g {
     flex: 0 0 auto;
-    width: 50%;
+    width: 42%;
+  }
+  .col-resp-t {
+    flex: 0 0 auto;
+    width: 58%;
   }
   .container {
     max-width: 960px;
@@ -54,10 +66,13 @@
 }
 
 @media screen and (max-width: 767px) {
-  .col-resp {
+  .col-resp-g {
     flex: 0 0 auto;
     width: 100%;
-    max-width: 100%;
+  }
+  .col-resp-t {
+    flex: 0 0 auto;
+    width: 100%;
   }
   .container {
     max-width: 720px;
@@ -72,7 +87,11 @@
 }
 
 @media screen and (max-width: 575.98px) {
-  .col-resp {
+  .col-resp-g {
+    flex: 0 0 auto;
+    width: 100%;
+  }
+  .col-resp-t {
     flex: 0 0 auto;
     width: 100%;
   }
@@ -114,7 +133,7 @@
   border-color: #dee2e6;
 }
 .table > :not(caption) > * > * {
-  padding: 0.5rem 0.5rem;
+  padding: 0.1rem 0.1rem;
   background-color: var(--bs-table-bg);
   border-bottom-width: 1px;
   box-shadow: inset 0 0 0 9999px var(--bs-table-accent-bg);
