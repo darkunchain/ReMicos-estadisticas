@@ -96,6 +96,7 @@ export class MyBarChartComponent implements OnInit {
       ]
       console.log('datatable: ', this.dataTable)
     })
+
     this.getBackendService.getIngresos().subscribe(datos =>{
       console.log('Registros: ', datos)
     })

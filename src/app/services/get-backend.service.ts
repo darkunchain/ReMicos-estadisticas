@@ -30,6 +30,11 @@ export class GetBackendService {
 
   }
 
+  getLocal(): Observable<any> {
+    return this.http.get<any>('http://192.168.20.10:8081/api/registros')
+
+  }
+
   getIngresos(): Observable<Cliente[]> {
     return this.http.get<Cliente[]>('http://app.remicos.com.co:8081/api/ingresos')
 
