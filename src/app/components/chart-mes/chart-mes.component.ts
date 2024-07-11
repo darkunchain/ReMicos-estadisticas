@@ -10,9 +10,6 @@ import { Moment } from 'moment';
 import { GetBackendService } from 'src/app/services/get-backend.service';
 import { Observable, Subscription, UnsubscriptionError } from 'rxjs';
 
-
-//import { default as _rollupMoment, Moment } from 'moment';
-//const moment = _rollupMoment || _moment;
 const moment = _moment;
 export const MY_FORMATS = {
   parse: {

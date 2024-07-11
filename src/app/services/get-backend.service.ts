@@ -52,4 +52,8 @@ export class GetBackendService {
     return this.http.post<any>('http://app.remicos.com.co:8081/api/graf2',
     {anio: dato[0], mes: dato[1]}, options)
   }
+
+  postGrafAnual(year: number): Observable<any> {
+    return this.http.post<any>('your-backend-api-url', { year: year });
+  }
 }
