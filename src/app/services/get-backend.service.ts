@@ -54,6 +54,10 @@ export class GetBackendService {
   }
 
   postGrafAnual(year: number): Observable<any> {
-    return this.http.post<any>('your-backend-api-url', { year: year });
+    let httpHeaders = new HttpHeaders()
+      .set('Content-Type', 'application/json')
+      .set('Cache-Control', 'no-cache');
+    let options = { headers: httpHeaders };
+    return this.http.post<any>('http://app.remicos.com.co:8081/api/grafAnual', { year: year });
   }
 }
