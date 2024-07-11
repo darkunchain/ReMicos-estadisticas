@@ -70,6 +70,7 @@ export class ChartAnioComponent implements OnInit {
 
     this.getBackendService.postGrafAnual(this.dato).subscribe(resp => {
       this.retorno = resp;
+      console.log(' resp:', resp);
       this.barData = Array(12).fill(0); // Reinicializar los datos para 12 meses
 
       this.retorno.ingresosMes.forEach((element: any) => {
