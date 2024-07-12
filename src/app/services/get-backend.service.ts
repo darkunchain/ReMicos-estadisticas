@@ -62,4 +62,15 @@ export class GetBackendService {
     //return this.http.post<any>('http://localhost:3000/api/grafAnual', { year: year });
     return this.http.post<any>('http://app.remicos.com.co:8081/api/grafAnual', { year: year });
   }
+
+
+  postGrafMes(month: number): Observable<any> {
+    let httpHeaders = new HttpHeaders()
+      .set('Content-Type', 'application/json')
+      .set('Cache-Control', 'no-cache');
+    let options = { headers: httpHeaders };
+    //return this.http.post<any>('http://localhost:3000/api/grafMes', { month: month }, options);
+    return this.http.post<any>('http://app.remicos.com.co:8081/api/grafMes', { month: month });
+  }
 }
+

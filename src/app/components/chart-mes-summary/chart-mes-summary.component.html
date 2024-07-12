@@ -1,0 +1,21 @@
+<hr class="mt-2">
+
+<mat-form-field appearance="fill">
+  <mat-label>Seleccione el Mes</mat-label>
+  <mat-select (selectionChange)="chosenMonthHandler($event.value)">
+    <mat-option *ngFor="let month of months" [value]="month.value">
+      {{ month.viewValue }}
+    </mat-option>
+  </mat-select>
+</mat-form-field>
+
+<div style="display: block;">
+  <canvas baseChart
+    [datasets]="barChartData"
+    [labels]="barChartLabels"
+    [options]="barChartOptions"
+    [plugins]="barChartPlugins"
+    [legend]="barChartLegend"
+    [chartType]="barChartType">
+  </canvas>
+</div>

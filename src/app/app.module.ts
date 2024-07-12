@@ -14,7 +14,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { ChartMesComponent } from './components/chart-mes/chart-mes.component';
 import { MaterialModule } from './material.module';
 import { ChartAnioComponent } from './components/chart-anio/chart-anio.component';
-import { ChartAnioSummaryComponent } from './components/chart-anio-summary/chart-anio-summary.component';
+import { ChartMesSummaryComponent } from './components/chart-mes-summary/chart-mes-summary.component';
 
 
 
@@ -26,7 +26,7 @@ import { ChartAnioSummaryComponent } from './components/chart-anio-summary/chart
     MyBarChartComponent,
     ChartMesComponent,
     ChartAnioComponent,
-    ChartAnioSummaryComponent
+    ChartMesSummaryComponent
   ],
   imports: [
     BrowserModule,
