@@ -60,27 +60,28 @@ export class ChartAnioComponent implements OnInit {
   ];
 
   constructor(private getBackendService: GetBackendService) {}
-
-  chosenYearHandler(normalizedYear: Moment, datepicker: MatDatepicker<Moment>) {
+  
+  chosenYearHandler(normalizedYear: Moment, datepicker: MatDatepicker<Moment>) {    
     const ctrlValue = this.date.value;
     ctrlValue.year(normalizedYear.year());
     this.date.setValue(ctrlValue);
     this.dato = this.date.value.year();
     console.log('dato:', this.dato);
-
+    this.barData = Array(12).fill(0);
     this.getBackendService.postGrafAnual(this.dato).subscribe(resp => {
       this.retorno = resp;
-      console.log(' resp:', resp);
-      this.barData = Array(12).fill(0); // Reinicializar los datos para 12 meses
-
-      this.retorno.ingresosMes.forEach((element: any) => {
-        this.barData[element.mes - 1] = element.ingresoMes;
+        this.retorno.ingresosMes.forEach((element: any) => {        
+        var indi=element._id.month - 1 
+        this.barData[indi] = element.ingresoMes;        
       });
-
+      console.log('bardata:', this.barData);
+      this.barChartData = [
+        { data: this.barData, label: 'Ingresos' }
+      ];
       this.baseChart.chart.update();
     });
 
-    datepicker.close();
+    datepicker.close();    
   }
 
   ngOnInit(): void {}
