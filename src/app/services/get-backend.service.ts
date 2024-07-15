@@ -49,8 +49,8 @@ export class GetBackendService {
       .set('Content-Type', 'application/json')
       .set('Cache-Control', 'no-cache');
     let options = { headers: httpHeaders };
-    return this.http.post<any>('http://localhost:3000/api/graf2',
-    //return this.http.post<any>('http://app.remicos.com.co:8081/api/graf2',
+    //return this.http.post<any>('http://localhost:3000/api/graf2',
+    return this.http.post<any>('http://app.remicos.com.co:8081/api/graf2',
     {anio: dato[0], mes: dato[1]}, options)
   }
 
@@ -59,8 +59,8 @@ export class GetBackendService {
       .set('Content-Type', 'application/json')
       .set('Cache-Control', 'no-cache');
     let options = { headers: httpHeaders };
-    return this.http.post<any>('http://localhost:3000/api/grafAnual', { year: year });
-    //return this.http.post<any>('http://app.remicos.com.co:8081/api/grafAnual', { year: year });
+    //return this.http.post<any>('http://localhost:3000/api/grafAnual', { year: year });
+    return this.http.post<any>('http://app.remicos.com.co:8081/api/grafAnual', { year: year });
   }
 
 
@@ -69,8 +69,8 @@ export class GetBackendService {
       .set('Content-Type', 'application/json')
       .set('Cache-Control', 'no-cache');
     let options = { headers: httpHeaders };
-    return this.http.post<any>('http://localhost:3000/api/grafMes', { month: month }, options);
-    //return this.http.post<any>('http://app.remicos.com.co:8081/api/grafMes', { month: month });
+    //return this.http.post<any>('http://localhost:3000/api/grafMes', { month: month }, options);
+    return this.http.post<any>('http://app.remicos.com.co:8081/api/grafMes', { month: month });
   }
 }
 
