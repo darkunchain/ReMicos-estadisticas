@@ -1,0 +1,55 @@
+<div class="date-pickers-row">
+  <div class="date-picker-container">
+    <h3>Ingresos Diarios en el Mes</h3>
+    <mat-form-field appearance="fill" class="date-picker">
+      <mat-label>Seleccione Mes y Año</mat-label>
+      <input matInput [matDatepicker]="dpMes" [formControl]="dateMes">
+      <mat-datepicker-toggle matSuffix [for]="dpMes"></mat-datepicker-toggle>
+      <mat-datepicker #dpMes
+                      startView="multi-year"
+                      (yearSelected)="chosenYearMonthHandler($event, dateMes, dpMes)"
+                      (monthSelected)="chosenMonthHandler($event, dateMes, dpMes)"
+                      panelClass="example-month-picker">
+      </mat-datepicker>
+    </mat-form-field>
+  </div>
+
+  <div class="date-picker-container">
+    <h3>Ingresos Mensuales en el Año</h3>
+    <mat-form-field appearance="fill" class="date-picker">
+      <mat-label>Seleccione Año</mat-label>
+      <input matInput [matDatepicker]="dpAnio" [formControl]="dateAnio">
+      <mat-datepicker-toggle matSuffix [for]="dpAnio"></mat-datepicker-toggle>
+      <mat-datepicker #dpAnio
+                      startView="multi-year"
+                      (yearSelected)="chosenYearHandler($event, dateAnio, dpAnio)"
+                      panelClass="example-year-picker">
+      </mat-datepicker>
+    </mat-form-field>
+  </div>
+
+  <div class="date-picker-container">
+    <h3>Comparativos de cada mes</h3>
+    <mat-form-field appearance="fill" class="date-picker">
+      <mat-label>Seleccione Mes</mat-label>
+      <input matInput [matDatepicker]="dpSummary" [formControl]="dateSummary">
+      <mat-datepicker-toggle matSuffix [for]="dpSummary"></mat-datepicker-toggle>
+      <mat-datepicker #dpSummary
+                      startView="year"
+                      (monthSelected)="chosenMonthHandler($event, dateSummary, dpSummary)"
+                      panelClass="example-month-picker">
+      </mat-datepicker>
+    </mat-form-field>
+  </div>
+</div>
+
+<div style="display: block;">
+  <canvas baseChart
+    [datasets]="barChartData"
+    [labels]="barChartLabels"
+    [options]="barChartOptions"
+    [plugins]="barChartPlugins"
+    [legend]="barChartLegend"
+    [chartType]="barChartType">
+  </canvas>
+</div>
