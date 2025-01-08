@@ -53,7 +53,7 @@ export class MyBarChartComponent implements OnInit {
 
   ngOnInit() {
     this.getBackendService.getGraf1().subscribe(datos =>{
-      console.log('graf1: ', datos)
+      //console.log('graf1: ', datos)
       this.barChartData = [
         { data: [datos.lunes15, datos.martes15, datos.miercoles15,
           datos.jueves15, datos.viernes15, datos.sabado15, datos.domingo15],
@@ -94,11 +94,11 @@ export class MyBarChartComponent implements OnInit {
         datos.sabado15,datos.sabado30,datos.sabado60,datos.sabado15p,datos.sabado30p,
         datos.domingo15,datos.domingo30,datos.domingo60,datos.domingo15p,datos.domingo30p,
       ]
-      console.log('datatable: ', this.dataTable)
+      //console.log('datatable: ', this.dataTable)
     })
 
     this.getBackendService.getIngresos().subscribe(datos =>{
-      console.log('Registros: ', datos)
+      //console.log('Registros: ', datos)
     })
   }
 

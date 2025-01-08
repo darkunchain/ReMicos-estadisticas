@@ -66,7 +66,7 @@ export class ChartAnioComponent implements OnInit {
     ctrlValue.year(normalizedYear.year());
     this.date.setValue(ctrlValue);
     this.dato = this.date.value.year();
-    console.log('dato:', this.dato);
+    //console.log('dato:', this.dato);
     this.barData = Array(12).fill(0);
     this.getBackendService.postGrafAnual(this.dato).subscribe(resp => {
       this.retorno = resp;
@@ -74,7 +74,7 @@ export class ChartAnioComponent implements OnInit {
         var indi=element._id.month - 1 
         this.barData[indi] = element.ingresoMes;        
       });
-      console.log('bardata:', this.barData);
+      //console.log('bardata:', this.barData);
       this.barChartData = [
         { data: this.barData, label: 'Ingresos' }
       ];

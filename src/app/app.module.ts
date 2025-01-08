@@ -16,6 +16,7 @@ import { MaterialModule } from './material.module';
 import { ChartAnioComponent } from './components/chart-anio/chart-anio.component';
 import { ChartMesSummaryComponent } from './components/chart-mes-summary/chart-mes-summary.component';
 import { ChartUnifiedComponent } from './components/chart-unified/chart-unified.component';
+import { ChartSegmentadaComponent } from './components/chart-segmentada/chart-segmentada.component';
 
 
 
@@ -28,7 +29,8 @@ import { ChartUnifiedComponent } from './components/chart-unified/chart-unified.
     ChartMesComponent,
     ChartAnioComponent,
     ChartMesSummaryComponent,
-    ChartUnifiedComponent
+    ChartUnifiedComponent,
+    ChartSegmentadaComponent
   ],
   imports: [
     BrowserModule,

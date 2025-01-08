@@ -53,3 +53,15 @@
     [chartType]="barChartType">
   </canvas>
 </div>
+
+<!-- Segunda gráfica debajo de la primera -->
+<div style="display: block;">
+  <canvas baseChart
+    [datasets]="barChartDataComparative"
+    [labels]="barChartLabels"
+    [options]="barChartOptions"
+    [legend]="barChartLegend"
+    [chartType]="barChartType"
+    [plugins]="barChartPlugins">
+  </canvas>
+</div>

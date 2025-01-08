@@ -95,14 +95,14 @@ export class ChartMesComponent implements OnInit, OnDestroy{
         this.barChartLabels[i] = i+'-'+this.dato[1]+'-'+this.dato[0]
       }
 
-       console.log('retorno:', this.retorno, 'ingresosDia:',this.retorno.ingresosDia)
+       //console.log('retorno:', this.retorno, 'ingresosDia:',this.retorno.ingresosDia)
       this.retorno.ingresosDia.forEach((element: any) => {
         this.barData[element.dia] = element.ingresoDia
       });
 
       //this.baseChart.chart.update()
 
-      console.log('  this.barData:', this.barData, '  this.barChartLabels:', this.barChartLabels)
+      //console.log('  this.barData:', this.barData, '  this.barChartLabels:', this.barChartLabels)
 
     })
     datepicker.close();
