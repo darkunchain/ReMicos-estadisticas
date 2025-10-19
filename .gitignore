@@ -44,3 +44,4 @@ testem.log
 Thumbs.db
 /dist
 ./angular
+package-lock.json
