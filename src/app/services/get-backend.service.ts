@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
 import { Cliente } from '../interfaces/cliente';
 import { Observable, Subject } from 'rxjs';
 
@@ -28,7 +28,13 @@ export class GetBackendService {
   getRegistros(): Observable<Cliente[]> {
     //return this.http.get<Cliente[]>('http://localhost:3000/api/registros')
     return this.http.get<Cliente[]>('/api/registros')
+  }
 
+  getRegistrosDays(days?: number): Observable<Cliente[]> {
+    const opts = days != null
+      ? { params: new HttpParams().set('days', String(days)) }
+      : undefined;
+    return this.http.get<Cliente[]>('/api/registros', opts);
   }
 
   getLocal(): Observable<any> {
